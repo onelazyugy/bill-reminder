@@ -1,0 +1,15 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    {{title}}!
+  </h1>
+  <h2 *ngIf="ping === 'Online'" [ngStyle]="{'color': 'green'}">
+    App status: {{ping}}
+  </h2>
+  <h2 *ngIf="ping === 'Offline'" [ngStyle]="{'color': 'red'}">
+    App status: {{ping}}
+  </h2>
+  <img src="../assets/bill_clock.png" alt="bill clock">
+</div>
+
+
