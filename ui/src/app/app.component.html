@@ -1,5 +1,5 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
+<!-- <div style="text-align:center">
   <h1>
     {{title}}!
   </h1>
@@ -10,6 +10,23 @@
     App status: {{ping}}
   </h2>
   <img src="../assets/bill_clock.png" alt="bill clock">
-</div>
+  <div>
+    <ul>
+      <li>
+          <a routerLink="/recipes">Bills</a>
+      </li>
+      <li>
+          <a routerLink="/chores">Chores</a>
+      </li>
+  </ul>
+  </div>
+</div> -->
 
+<div class="container">
+  <div>
+    <div>
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>
 
