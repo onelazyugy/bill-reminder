@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+import { AppAngularMaterialModule } from './app-angular-material.module';
 import { AppFlexLayoutModule } from './app-flex-layout.module';
 import { AppComponent } from './app.component';
 import { BillModule } from './bill/bill.module';
@@ -17,6 +18,7 @@ import { NextModule } from './next/next.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    AppAngularMaterialModule,
     AppFlexLayoutModule,
     HomeModule,
     ChoreModule,
