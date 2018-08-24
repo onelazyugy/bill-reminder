@@ -6,6 +6,7 @@
 - package.json (located on root folder) contains all node dependencies
 - the scripts section (postinstall) allows npm to install latest packages and build the UI so that the ui will have a dist folder using ng cli from "ui/package.json"
 - package.json (ui/package.json) need to have @angular-devkit/build-angular, @angular/cli, and @angular/compiler-cli as depedencies as well as under devDependencies
+- make sure your angular.json file under ui directory has the "outputPath": "dist/"
 ## How to run locally?
 - clone this repo
 - $ cd to root folder
