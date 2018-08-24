@@ -7,7 +7,8 @@ import { BillModule } from './bill/bill.module';
 import { ChoreModule } from './chore/chore.module';
 import { AppRoutingModule } from './app-routing.module';
 import { HomeModule } from './home/home.module';
-
+import { ProfileModule } from './profile/profile.module';
+import { NextModule } from './next/next.module';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,9 @@ import { HomeModule } from './home/home.module';
     AppFlexLayoutModule,
     HomeModule,
     ChoreModule,
-    BillModule
+    BillModule,
+    ProfileModule,
+    NextModule
   ],
   providers: [],
   bootstrap: [AppComponent]
