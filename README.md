@@ -1,4 +1,4 @@
-# renta2z-demo
+# bill reminder app
 ## node with express and angular
 - what angular version? lastest angular version
 ## How to deploy to heroku?
