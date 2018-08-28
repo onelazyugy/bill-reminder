@@ -5,3 +5,19 @@
     width: 120px;
     height: 60px;    
 }
+
+.iconStyle {
+    text-align:center; 
+    font-size:40px;
+}
+
+.linkStyle {
+    text-align:center;
+    text-decoration: none;
+    font-size: 25px;
+}
+
+.buttonStyle {
+    padding-top:10px; 
+    padding-bottom:10px;
+}
