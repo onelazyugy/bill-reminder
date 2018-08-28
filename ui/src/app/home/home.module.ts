@@ -4,6 +4,7 @@ import { CommonModule } from "@angular/common";
 import { RouterModule } from '@angular/router';
 import { AppAngularMaterialModule } from "../app-angular-material.module";
 import { AppFlexLayoutModule } from "../app-flex-layout.module";
+import { ShareModule } from "../share/share.module";
 
 @NgModule({
     declarations:[HomeComponent],
@@ -11,7 +12,8 @@ import { AppFlexLayoutModule } from "../app-flex-layout.module";
         CommonModule, 
         RouterModule, 
         AppAngularMaterialModule,
-        AppFlexLayoutModule
+        AppFlexLayoutModule,
+        ShareModule
     ]
 })
 export class HomeModule{}

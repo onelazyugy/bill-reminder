@@ -10,6 +10,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { HomeModule } from './home/home.module';
 import { ProfileModule } from './profile/profile.module';
 import { NextModule } from './next/next.module';
+import { ShareModule } from './share/share.module';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { NextModule } from './next/next.module';
     AppRoutingModule,
     AppAngularMaterialModule,
     AppFlexLayoutModule,
+    ShareModule,
     HomeModule,
     ChoreModule,
     BillModule,
