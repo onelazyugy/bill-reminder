@@ -2,7 +2,7 @@
   <div fxFlex="100%" style="background-color:yellow;">
     <div fxLayout.xs="column" fxLayoutAlign="center">
       
-      <div fxFlex="100%" fxLayoutAlign="center" style="background-color: aqua;">
+      <div fxFlex="100%" fxLayoutAlign="center" style="background-color: aqua; padding-top:10px; padding-bottom:10px">
         <div id="roundDiv">
           <div fxLayout="column">
             <i class="material-icons">settings</i>
@@ -15,23 +15,43 @@
 
 
 
-      <div fxFlex="100%" fxLayoutAlign="center">
+      <div fxFlex="100%" fxLayoutAlign="center" style="padding-top:10px; padding-bottom:10px">
         <div id="roundDiv">
           <div fxLayout="column">
             <i class="material-icons">credit_card</i>
           </div>
           <div fxLayout="column">
-            <a href="/profile">BILLS</a>
+            <a href="/bills">BILLS</a>
           </div>
         </div>
       </div>
 
 
-      <div fxFlex="100%" fxLayoutAlign="center" style="background-color: violet;">
-        <a href="/chores" class="myButton"><i class="material-icons">shopping_basket</i>CHORES</a>
+      <div fxFlex="100%" fxLayoutAlign="center" style="background-color: violet; padding-top:10px; padding-bottom:10px">        
+        <div fxFlex="100%" fxLayoutAlign="center">
+          <div id="roundDiv">
+            <div fxLayout="column">
+              <i class="material-icons">shopping_basket</i>
+            </div>
+            <div fxLayout="column">
+              <a href="/chores">CHORES</a>
+            </div>
+          </div>
+        </div>
       </div>
-      <div fxFlex="100%" fxLayoutAlign="center" style="background-color: green;">
-        <a href="/next" class="myButton">NEXT</a>
+
+
+      <div fxFlex="100%" fxLayoutAlign="center" style="background-color: green; padding-top:10px; padding-bottom:10px">
+        <div fxFlex="100%" fxLayoutAlign="center">
+            <div id="roundDiv">
+              <div fxLayout="column">
+                <i class="material-icons">today</i>
+              </div>
+              <div fxLayout="column">
+                <a href="/next">NEXT</a>
+              </div>
+            </div>
+          </div>
       </div>
     </div>
   </div>  
