@@ -1,17 +1,37 @@
 <div flex fxLayout="row" fxLayout.xs="column" fxLayout.lt-lg="column" fxLayoutGap="10px">
   <div fxFlex="100%" style="background-color:yellow;">
     <div fxLayout.xs="column" fxLayoutAlign="center">
+      
       <div fxFlex="100%" fxLayoutAlign="center" style="background-color: aqua;">
-        <a routerLink="/profile">Profile</a>
+        <div id="roundDiv">
+          <div fxLayout="column">
+            <i class="material-icons">settings</i>
+          </div>
+          <div fxLayout="column">
+            <a href="/profile">SETTING</a>
+          </div>
+        </div>
       </div>
+
+
+
       <div fxFlex="100%" fxLayoutAlign="center">
-        <a routerLink="/bills">Bills</a>
+        <div id="roundDiv">
+          <div fxLayout="column">
+            <i class="material-icons">credit_card</i>
+          </div>
+          <div fxLayout="column">
+            <a href="/profile">BILLS</a>
+          </div>
+        </div>
       </div>
+
+
       <div fxFlex="100%" fxLayoutAlign="center" style="background-color: violet;">
-        <a routerLink="/chores">Chores</a>
+        <a href="/chores" class="myButton"><i class="material-icons">shopping_basket</i>CHORES</a>
       </div>
       <div fxFlex="100%" fxLayoutAlign="center" style="background-color: green;">
-        <a routerLink="/next">Next</a>
+        <a href="/next" class="myButton">NEXT</a>
       </div>
     </div>
   </div>  
