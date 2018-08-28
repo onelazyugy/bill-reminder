@@ -1,20 +1,18 @@
-<ul>
-  <li>
-    <a routerLink="/bills">Bills</a>
-  </li>
-  <li>
-    <a routerLink="/chores">Chores</a>
-  </li>
-  <li>
-    <a routerLink="/profile">Profile</a>
-  </li>
-  <li>
-    <a routerLink="/next">Next</a>
-  </li>
-</ul>
-<div>
-  <i>Reserve for up coming chores and bills</i>
-</div>
-<div>
-  <button mat-raised-button color="primary">Primary</button>
+<div flex fxLayout="row" fxLayout.xs="column" fxLayout.lt-lg="column" fxLayoutGap="10px">
+  <div fxFlex="100%" style="background-color:yellow;">
+    <div fxLayout.xs="column" fxLayoutAlign="center">
+      <div fxFlex="100%" fxLayoutAlign="center" style="background-color: aqua;">
+        <a routerLink="/profile">Profile</a>
+      </div>
+      <div fxFlex="100%" fxLayoutAlign="center">
+        <a routerLink="/bills">Bills</a>
+      </div>
+      <div fxFlex="100%" fxLayoutAlign="center" style="background-color: violet;">
+        <a routerLink="/chores">Chores</a>
+      </div>
+      <div fxFlex="100%" fxLayoutAlign="center" style="background-color: green;">
+        <a routerLink="/next">Next</a>
+      </div>
+    </div>
+  </div>  
 </div>
