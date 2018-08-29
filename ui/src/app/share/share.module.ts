@@ -1,13 +1,13 @@
-import { NgModule } from "@angular/core";
-import { CommonModule } from "@angular/common";
-import { LargeButtonComponent } from "./button/large-button.component";
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { LargeButtonComponent } from './button/large-button.component';
 
 
 @NgModule({
-    declarations:[LargeButtonComponent],
-    exports:[
+    declarations: [LargeButtonComponent],
+    exports: [
         LargeButtonComponent,
         CommonModule
     ]
 })
-export class ShareModule{}
+export class ShareModule {}

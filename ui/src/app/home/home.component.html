@@ -1,58 +1,35 @@
-<div flex fxLayout="row" fxLayout.xs="column" fxLayout.lt-lg="column" fxLayoutGap="10px">
+<div fxLayout="row" fxLayoutGap="5px">
   <div fxFlex="100%">
     <div fxLayout.xs="column" fxLayoutAlign="center">
-      
-      <div fxFlex="100%" fxLayoutAlign="center" class="buttonStyle">
-        <div id="roundDiv">
-          <div fxLayout="column">
-            <i class="material-icons iconStyle">settings</i>
-          </div>
-          <div fxLayout="column">
-            <a class="linkStyle" href="/profile">SETTING</a>
-          </div>
-        </div>
-      </div>
-
-
 
       <div fxFlex="100%" fxLayoutAlign="center" class="buttonStyle">
         <div id="roundDiv">
-          <div fxLayout="column">
-            <i class="material-icons iconStyle">credit_card</i>
-          </div>
-          <div fxLayout="column">
-            <a class="linkStyle" href="/bills">BILLS</a>
-          </div>
+            <i class="material-icons iconStyle" fxLayoutAlign="center">settings</i>
+            <a class="linkStyle" href="/profile" fxLayoutAlign="center">SETTING</a>
         </div>
       </div>
 
+      <div fxFlex="100%" fxLayoutAlign="center" class="buttonStyle">
+        <div id="roundDiv">
+          <i class="material-icons iconStyle" fxLayoutAlign="center">credit_card</i>
+          <a class="linkStyle" href="/bills" fxLayoutAlign="center">BILLS</a>     
+        </div>
+      </div>
 
       <div fxFlex="100%" fxLayoutAlign="center" class="buttonStyle">        
-        <div fxFlex="100%" fxLayoutAlign="center">
-          <div id="roundDiv">
-            <div fxLayout="column">
-              <i class="material-icons iconStyle">shopping_basket</i>
-            </div>
-            <div fxLayout="column">
-              <a class="linkStyle" href="/chores">CHORES</a>
-            </div>
-          </div>
+        <div id="roundDiv">       
+          <i class="material-icons iconStyle" fxLayoutAlign="center">shopping_basket</i>        
+          <a class="linkStyle" href="/chores" fxLayoutAlign="center">CHORES</a>   
         </div>
       </div>
 
-
       <div fxFlex="100%" fxLayoutAlign="center" class="buttonStyle">
-        <div fxFlex="100%" fxLayoutAlign="center">
-            <div id="roundDiv">
-              <div fxLayout="column">
-                <i class="material-icons iconStyle">today</i>
-              </div>
-              <div fxLayout="column">
-                <a class="linkStyle" href="/next">NEXT</a>
-              </div>
-            </div>
-          </div>
+        <div id="roundDiv">  
+          <i class="material-icons iconStyle" fxLayoutAlign="center">today</i>
+          <a class="linkStyle" href="/next" fxLayoutAlign="center">NEXT</a>
+        </div>
       </div>
+
     </div>
   </div>  
 </div>
