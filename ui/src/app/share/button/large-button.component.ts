@@ -1,15 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
-  selector: 'large-button',
+  selector: 'app-large-button',
   templateUrl: './large-button.component.html',
   styleUrls: ['./large-button.component.css']
 })
 export class LargeButtonComponent implements OnInit {
+  
+  @Input() iconName: string;
+  @Input() btnLabel: string;
 
   constructor() { }
 
   ngOnInit() {
+    
   }
 
 }

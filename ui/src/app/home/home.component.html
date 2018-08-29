@@ -1,35 +1,28 @@
-<div fxLayout="row" fxLayoutGap="5px">
-  <div fxFlex="100%">
-    <div fxLayout.xs="column" fxLayoutAlign="center">
-
-      <div fxFlex="100%" fxLayoutAlign="center" class="buttonStyle">
-        <div id="roundDiv">
-            <i class="material-icons iconStyle" fxLayoutAlign="center">settings</i>
-            <a class="linkStyle" href="/profile" fxLayoutAlign="center">SETTING</a>
-        </div>
-      </div>
-
-      <div fxFlex="100%" fxLayoutAlign="center" class="buttonStyle">
-        <div id="roundDiv">
-          <i class="material-icons iconStyle" fxLayoutAlign="center">credit_card</i>
-          <a class="linkStyle" href="/bills" fxLayoutAlign="center">BILLS</a>     
-        </div>
-      </div>
-
-      <div fxFlex="100%" fxLayoutAlign="center" class="buttonStyle">        
-        <div id="roundDiv">       
-          <i class="material-icons iconStyle" fxLayoutAlign="center">shopping_basket</i>        
-          <a class="linkStyle" href="/chores" fxLayoutAlign="center">CHORES</a>   
-        </div>
-      </div>
-
-      <div fxFlex="100%" fxLayoutAlign="center" class="buttonStyle">
-        <div id="roundDiv">  
-          <i class="material-icons iconStyle" fxLayoutAlign="center">today</i>
-          <a class="linkStyle" href="/next" fxLayoutAlign="center">NEXT</a>
-        </div>
-      </div>
-
+<div fxLayout.xs="column" fxLayoutGap="5px" fxLayoutAlign="center">
+  <div fxLayout.xs="row" fxLayoutGap="5px">
+    <div fxFlex="100%" fxLayoutAlign="center" (click)="onClick(0)">
+        <app-large-button [iconName]="'settings'" [btnLabel]="'SETTING'"></app-large-button>
     </div>
-  </div>  
+    <div fxFlex="100%" fxLayoutAlign="center" (click)="onClick(1)">
+      <app-large-button [iconName]="'credit_card'" [btnLabel]="'BILLS'"></app-large-button>
+    </div>
+  </div>
+
+  <div fxLayout.xs="row" fxLayoutGap="5px">
+    <div fxFlex="100%" fxLayoutAlign="center" (click)="onClick(2)">
+      <app-large-button [iconName]="'shopping_basket'" [btnLabel]="'CHORES'"></app-large-button>
+    </div>
+    <div fxFlex="100%" fxLayoutAlign="center" (click)="onClick(3)">
+      <app-large-button [iconName]="'today'" [btnLabel]="'NEXT'"></app-large-button>
+    </div>
+  </div>
+</div>
+
+<div fxLayout.lt-lg="column" fxLayout.lt-xl="column" fxLayoutAlign="center" fxLayoutGap="10px">
+  <div fxFlex="100%" fxLayoutAlign="center">
+      Upcoming Bills
+  </div>
+  <div fxFlex="100%" fxLayoutAlign="center">
+      Upcoming Chores
+  </div>
 </div>

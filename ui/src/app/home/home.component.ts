@@ -7,15 +7,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
   buttons = [{
+    id: '0',
     label: 'SETTING',
     iconLabel: 'settings'
   },{
+    id: '1',
     label: 'BILLS',
     iconLabel: 'credit_card'
   },{
+    id: '2',
     label: 'CHORES',
     iconLabel: 'shopping_basket'
   },{
+    id: '3',
     label: 'NEXT',
     iconLabel: 'today'
   }];
@@ -24,5 +28,7 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
   }
 
-  
+  onClick(btnId: Number) {
+    console.log(btnId);
+  }
 }

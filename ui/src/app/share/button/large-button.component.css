@@ -1,0 +1,16 @@
+.roundBtn {
+    border-radius: 10px;
+    background: #73AD21;
+    padding: 20px; 
+    width: 120px; 
+}
+
+.iconStyle {
+    text-align:center; 
+    font-size:40px;
+}
+
+.labelStyle {
+    text-align:center;
+    font-size: 25px;
+}
