@@ -20,6 +20,12 @@
 
 <div fxLayout.lt-lg="column" fxLayout.lt-xl="column" fxLayoutAlign="center" fxLayoutGap="10px">
   <div fxFlex="100%" fxLayoutAlign="center">
+      <div fxLayoutAlign="center" style="padding-top:5px;">
+        <span class="iconStyle" fxLayoutAlign="center">Today:&nbsp;</span> 
+        <span class="todayDateStyle">{{todayDate() | date:'MM/dd/yyyy'}}</span>
+      </div>
+  </div>
+  <div fxFlex="100%" fxLayoutAlign="center">
       Upcoming Bills
   </div>
   <div fxFlex="100%" fxLayoutAlign="center">

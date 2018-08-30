@@ -1,0 +1,19 @@
+.backArrow {
+    font-size: 40px;
+    cursor: pointer;
+}
+
+.billHeaderlabelStyle {
+    text-align:center;
+    font-size: 25px;
+    margin-top: 5px;
+}
+
+.billSubHeaderlabelStyle {
+    font-size: 25px;
+    margin-top: 5px;
+}
+
+.billFormContainer > * {
+    width: 100%;
+}

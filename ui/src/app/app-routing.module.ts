@@ -12,7 +12,7 @@ const appRoutes: Routes = [
     { path: '', component: HomeComponent },
     { path: 'bills',  component: BillComponent},
     { path: 'chores', component: ChoreComponent },
-    { path: 'profile', component: ProfileComponent },
+    { path: 'settings', component: ProfileComponent },
     { path: 'next', component: NextComponent }
 ];
 @NgModule({

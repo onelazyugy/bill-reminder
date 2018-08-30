@@ -1,3 +1,17 @@
-<p>
-  bill works!
-</p>
+<div fxLayout.xs="row" fxLayout.lt-lg="row" fxLayout.lt-xl="row" fxLayoutGap="5px" fxLayoutAlign="center">
+  <div (click)="back()" class="material-icons backArrow">
+      keyboard_backspace
+  </div>
+  <div class="billHeaderlabelStyle">
+    {{'Bill Management' | uppercase}}
+  </div>
+</div>
+
+<div fxLayout.xs="column" fxLayout.lt-lg="column" fxLayout.lt-xl="column" fxLayoutGap="5px" fxLayoutAlign="center">
+  <div class="billSubHeaderlabelStyle">{{'Add Bill' | uppercase}}</div>
+  <div class="billFormContainer">
+    <mat-form-field>
+      <input matInput placeholder="Bill Name">
+    </mat-form-field>
+  </div>
+</div>

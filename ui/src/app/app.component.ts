@@ -8,25 +8,8 @@ import { CONFIG } from './config/globals';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  title = 'Simple Bill Reminder';
-  ping = 'pinging...';
-
   ngOnInit(): void {
-    const url = CONFIG.url;
-    console.log('URL:', url);
-    const appointment = {};
-    console.log('REQUEST URL:', url + '/api/ping');
-    axios.get(url + '/api/ping').then(result => {
-        const response = result.data;
-        if (response) {
-          this.ping = response.message === 'pong!' ? 'Online' : 'Offline';
-          console.log('ping:', this.ping);
-        }
-      })
-      .catch(error => {
-          console.error('ERROR:', error);
-          this.ping = 'Offline';
-      });
+
   }
 
 }
