@@ -10,8 +10,26 @@
 <div fxLayout.xs="column" fxLayout.lt-lg="column" fxLayout.lt-xl="column" fxLayoutGap="5px" fxLayoutAlign="center">
   <div class="billSubHeaderlabelStyle">{{'Add Bill' | uppercase}}</div>
   <div class="billFormContainer">
-    <mat-form-field>
-      <input matInput placeholder="Bill Name">
-    </mat-form-field>
+    <form (ngSubmit)="addBill(f)" #f="ngForm" fxLayout="column">
+      <mat-form-field>
+        <input name="billName" id="billName" [(ngModel)]="name" matInput placeholder="Bill Name">
+      </mat-form-field>
+      <mat-form-field>
+        <input name="dueDate" id="dueDate" [(ngModel)]="dueDate" matInput [matDatepicker]="dp3" placeholder="Due date" readonly>
+        <mat-datepicker-toggle matSuffix [for]="dp3"></mat-datepicker-toggle>
+        <mat-datepicker #dp3 disabled="false"></mat-datepicker>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-select placeholder="Bill category" [(ngModel)]="category" name="category">
+          <mat-option *ngFor="let category of categories" [value]="category.value">
+            {{category.viewValue}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <div fxFlexAlign="end">
+          <button mat-raised-button color="primary" type="submit">Add Bill</button>
+      </div>
+    </form>
   </div>
 </div>
