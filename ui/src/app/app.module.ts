@@ -9,7 +9,7 @@ import { ChoreModule } from './chore/chore.module';
 import { AppRoutingModule } from './app-routing.module';
 import { HomeModule } from './home/home.module';
 import { ProfileModule } from './profile/profile.module';
-import { NextModule } from './next/next.module';
+import { HuniTodoModule } from './huni-todo/huni-todo.module'
 import { ShareModule } from './share/share.module';
 
 @NgModule({
@@ -26,7 +26,7 @@ import { ShareModule } from './share/share.module';
     ChoreModule,
     BillModule,
     ProfileModule,
-    NextModule
+    HuniTodoModule
   ],
   providers: [],
   bootstrap: [AppComponent]

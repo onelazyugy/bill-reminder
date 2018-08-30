@@ -1,19 +1,20 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
+import { Routes, RouterModule } from '@angular/router';
 
 import { BillComponent } from './bill/bill.component';
 import { ChoreComponent } from './chore/chore.component';
 import { HomeComponent } from './home/home.component';
 import { ProfileComponent } from './profile/profile.component';
-import { NextComponent } from './next/next.component';
+import { HuniTodoComponent } from './huni-todo/huni-todo.component';
 
+import { appRouteConstants } from './app.constants';
 
 const appRoutes: Routes = [
-    { path: '', component: HomeComponent },
-    { path: 'bills',  component: BillComponent},
-    { path: 'chores', component: ChoreComponent },
-    { path: 'settings', component: ProfileComponent },
-    { path: 'next', component: NextComponent }
+    { path: appRouteConstants.home, component: HomeComponent },
+    { path: appRouteConstants.bills,  component: BillComponent},
+    { path: appRouteConstants.chores, component: ChoreComponent },
+    { path: appRouteConstants.settings, component: ProfileComponent },
+    { path: appRouteConstants.huniTodo, component: HuniTodoComponent }
 ];
 @NgModule({
     imports: [

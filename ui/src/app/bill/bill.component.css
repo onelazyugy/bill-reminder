@@ -5,13 +5,14 @@
 
 .billHeaderlabelStyle {
     text-align:center;
-    font-size: 25px;
+    font-size: 30px;
     margin-top: 5px;
 }
 
 .billSubHeaderlabelStyle {
-    font-size: 25px;
+    font-size: 20px;
     margin-top: 5px;
+    font-style: italic
 }
 
 .billFormContainer > * {

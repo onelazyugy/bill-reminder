@@ -5,10 +5,12 @@ import { AppFlexLayoutModule } from '../app-flex-layout.module';
 
 @NgModule({
     declarations: [LargeButtonComponent],
-    imports: [AppFlexLayoutModule],
+    imports: [
+        CommonModule, 
+        AppFlexLayoutModule
+    ],
     exports: [
-        LargeButtonComponent,
-        CommonModule
+        LargeButtonComponent
     ]
 })
 export class ShareModule {}

@@ -1,9 +1,9 @@
 import { NgModule } from "@angular/core";
-import { NextComponent } from "./next.component";
+import { HuniTodoComponent } from "./huni-todo.component";
 import { CommonModule } from "@angular/common";
 
 @NgModule({
-    declarations:[NextComponent],
+    declarations:[HuniTodoComponent],
     imports:[CommonModule]
 })
-export class NextModule{}
+export class HuniTodoModule{}

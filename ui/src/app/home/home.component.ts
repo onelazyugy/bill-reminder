@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import axios from 'axios';
 import { CONFIG } from '../config/globals';
 import { Router } from '@angular/router';
+import { buttons } from './home.constants';
 
 @Component({
   selector: 'app-home',
@@ -11,12 +12,8 @@ import { Router } from '@angular/router';
 export class HomeComponent implements OnInit {
   title = 'Simple Bill Reminder';
   ping = 'pinging...';
-  buttons = [
-    {id: 0, link: '/settings'},
-    {id: 1, link: '/bills'},
-    {id: 2, link: '/chores'},
-    {id: 3, link: '/next'}
-  ];
+  homeViewButtons = buttons;
+  
   constructor(private router: Router) { }
 
   ngOnInit() {
@@ -43,25 +40,10 @@ export class HomeComponent implements OnInit {
   }
 
   onClick(btnId: Number) {
-    switch (btnId) {
-      case 0: {
-        this.router.navigate([this.buttons[0].link]);
-        break;
+    this.homeViewButtons.map((button)=>{
+      if(button.id === btnId) {
+        this.router.navigate([button.route]);
       }
-      case 1: {
-        this.router.navigate([this.buttons[1].link]);
-        break;
-      }
-      case 2: {
-        this.router.navigate([this.buttons[2].link]);
-        break;
-      }
-      case 3: {
-        this.router.navigate([this.buttons[3].link]);
-        break;
-      }
-      default:
-        break;
-    }
+    });
   }
 }

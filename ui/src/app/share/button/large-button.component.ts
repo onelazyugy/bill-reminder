@@ -7,8 +7,8 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class LargeButtonComponent implements OnInit {
   
-  @Input() iconName: string;
-  @Input() btnLabel: string;
+  @Input() icon: object;
+  @Input() label: object;
 
   constructor() { }
 

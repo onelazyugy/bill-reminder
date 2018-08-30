@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { NextComponent } from './next.component';
+import { HuniTodoComponent } from './huni-todo.component';
 
-describe('NextComponent', () => {
-  let component: NextComponent;
-  let fixture: ComponentFixture<NextComponent>;
+describe('HuniTodoComponent', () => {
+  let component: HuniTodoComponent;
+  let fixture: ComponentFixture<HuniTodoComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ NextComponent ]
+      declarations: [ HuniTodoComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(NextComponent);
+    fixture = TestBed.createComponent(HuniTodoComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

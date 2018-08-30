@@ -1,19 +1,19 @@
 <div fxLayout.xs="column" fxLayoutGap="5px" fxLayoutAlign="center">
   <div fxLayout.xs="row" fxLayoutGap="5px">
-    <div fxFlex="100%" fxLayoutAlign="center" (click)="onClick(0)">
-        <app-large-button [iconName]="'settings'" [btnLabel]="'SETTING'"></app-large-button>
+    <div fxFlex="100%" fxLayoutAlign="center" (click)="onClick(homeViewButtons[0].id)">
+        <app-large-button [icon]="homeViewButtons[0].icon" [label]="homeViewButtons[0].label"></app-large-button>
     </div>
-    <div fxFlex="100%" fxLayoutAlign="center" (click)="onClick(1)">
-      <app-large-button [iconName]="'credit_card'" [btnLabel]="'BILLS'"></app-large-button>
+    <div fxFlex="100%" fxLayoutAlign="center" (click)="onClick(homeViewButtons[1].id)">
+      <app-large-button [icon]="homeViewButtons[1].icon" [label]="homeViewButtons[1].label"></app-large-button>
     </div>
   </div>
 
   <div fxLayout.xs="row" fxLayoutGap="5px">
-    <div fxFlex="100%" fxLayoutAlign="center" (click)="onClick(2)">
-      <app-large-button [iconName]="'shopping_basket'" [btnLabel]="'CHORES'"></app-large-button>
+    <div fxFlex="100%" fxLayoutAlign="center" (click)="onClick(homeViewButtons[2].id)">
+      <app-large-button [icon]="homeViewButtons[2].icon" [label]="homeViewButtons[2].label"></app-large-button>
     </div>
-    <div fxFlex="100%" fxLayoutAlign="center" (click)="onClick(3)">
-      <app-large-button [iconName]="'today'" [btnLabel]="'NEXT'"></app-large-button>
+    <div fxFlex="100%" fxLayoutAlign="center" (click)="onClick(homeViewButtons[3].id)">
+      <app-large-button [icon]="homeViewButtons[3].icon" [label]="homeViewButtons[3].label"></app-large-button>
     </div>
   </div>
 </div>
@@ -21,8 +21,9 @@
 <div fxLayout.lt-lg="column" fxLayout.lt-xl="column" fxLayoutAlign="center" fxLayoutGap="10px">
   <div fxFlex="100%" fxLayoutAlign="center">
       <div fxLayoutAlign="center" style="padding-top:5px;">
-        <span class="iconStyle" fxLayoutAlign="center">Today:&nbsp;</span> 
-        <span class="todayDateStyle">{{todayDate() | date:'MM/dd/yyyy'}}</span>
+        <span class="todayDateStyle" fxLayoutAlign="center">Today:&nbsp;
+            <span>{{todayDate() | date:'MM/dd/yyyy'}}</span>
+        </span> 
       </div>
   </div>
   <div fxFlex="100%" fxLayoutAlign="center">

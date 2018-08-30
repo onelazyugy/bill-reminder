@@ -1,4 +1,4 @@
 <div class="roundBtn">
-    <i class="material-icons iconStyle" fxLayoutAlign="center">{{iconName}}</i>
-    <div class="labelStyle">{{btnLabel}}</div>
+    <i class="material-icons" [ngStyle]="icon.style" fxLayoutAlign="center">{{icon.name}}</i>
+    <div [ngStyle]="label.style">{{label.name}}</div>
 </div>
