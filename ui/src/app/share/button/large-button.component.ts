@@ -6,14 +6,14 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./large-button.component.css']
 })
 export class LargeButtonComponent implements OnInit {
-  
-  @Input() icon: object;
-  @Input() label: object;
+
+  @Input() icon;
+  @Input() label;
 
   constructor() { }
 
   ngOnInit() {
-    
+
   }
 
 }

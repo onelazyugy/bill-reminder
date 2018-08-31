@@ -19,6 +19,9 @@ export class BillComponent implements OnInit {
     {value: 'gas', viewValue: 'Gas'},
     {value: 'electric', viewValue: 'Electric'}
   ];
+  name: string;
+  dueDate: string;
+  category: string;
 
   constructor(private router: Router) { }
 
