@@ -1,11 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { NgForm } from '@angular/forms';
-
-export interface BillCategory {
-  value: string;
-  viewValue: string;
-}
+import { BillCategory } from './inteface/bill-category.interface';
+import { Bill } from './model/bill.model';
 
 @Component({
   selector: 'app-bill',
@@ -14,29 +11,41 @@ export interface BillCategory {
 })
 
 export class BillComponent implements OnInit {
-  categories: BillCategory[] = [
+  private categories: BillCategory[] = [
     {value: 'water', viewValue: 'Water'},
     {value: 'gas', viewValue: 'Gas'},
     {value: 'electric', viewValue: 'Electric'}
   ];
-  name: string;
-  dueDate: string;
-  category: string;
+  private bill = new Bill('', '', '', '', 0);
 
-  constructor(private router: Router) { }
+  constructor(private router: Router) {
+
+  }
 
   ngOnInit() {
+
   }
 
   back = () => {
     this.router.navigate(['/']);
   }
 
+  getCategories = () => {
+    return this.categories;
+  }
+
   addBill = (form: NgForm) => {
     const billName = form.value.billName;
     const dueDate = form.value.dueDate;
     const category = form.value.category;
-    const bill = {billName, dueDate, category};
-    console.log('bill', bill);
+    const company = form.value.company;
+    const amount = form.value.bilAmount;
+
+    this.bill.name = billName;
+    this.bill.dueDate = dueDate;
+    this.bill.category = category;
+    this.bill.company = company;
+    this.bill.amount = amount;
+    console.log('bill', this.bill);
   }
 }
