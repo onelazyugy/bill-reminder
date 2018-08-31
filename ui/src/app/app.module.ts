@@ -8,7 +8,7 @@ import { BillModule } from './bill/bill.module';
 import { ChoreModule } from './chore/chore.module';
 import { AppRoutingModule } from './app-routing.module';
 import { HomeModule } from './home/home.module';
-import { ProfileModule } from './profile/profile.module';
+import { SettingModule } from './setting/setting.module';
 import { HuniTodoModule } from './huni-todo/huni-todo.module'
 import { ShareModule } from './share/share.module';
 
@@ -25,7 +25,7 @@ import { ShareModule } from './share/share.module';
     HomeModule,
     ChoreModule,
     BillModule,
-    ProfileModule,
+    SettingModule,
     HuniTodoModule
   ],
   providers: [],

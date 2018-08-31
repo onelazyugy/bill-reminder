@@ -1,0 +1,9 @@
+.billSubHeaderlabelStyle {
+    font-size: 20px;
+    margin-top: 5px;
+    font-style: italic
+}
+
+.billFormContainer > * {
+    width: 100%;
+}

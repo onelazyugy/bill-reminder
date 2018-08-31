@@ -7,10 +7,14 @@ import { BillComponent } from './bill.component';
 import { AppAngularMaterialModule } from '../app-angular-material.module';
 import { AppFlexLayoutModule } from '../app-flex-layout.module';
 import { ShareModule } from '../share/share.module';
+import { AddBillForm } from './form/add-bill/add-bill.component';
 
 
 @NgModule({
-    declarations: [BillComponent],
+    declarations: [
+        BillComponent,
+        AddBillForm
+    ],
     imports: [
         CommonModule,
         RouterModule,

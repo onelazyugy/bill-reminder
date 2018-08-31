@@ -2,7 +2,7 @@ const appRouteConstants = {
     home: '',
     bills: 'bills',
     chores: 'chores',
-    settings: 'setting',
+    settings: 'settings',
     huniTodo: 'huni-todo'
 }
 
