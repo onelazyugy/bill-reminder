@@ -1,22 +1,27 @@
-let reminder = require("../model/reminder");
-const _ = require("lodash");
+const bill = require('../model/bill');
+const fs = require('fs');
+const _ = require('lodash');
 
-exports.getAppointments = function() {
-    return reminder;
-};
-
-exports.bookAppointment = function(appointment) {
-    const index = _.findIndex(reminder.slots, {id: parseInt(appointment.id)});
-    let isSuccess = false;
-    if(index !== -1) {
-        isSuccess = true;
-        reminder.slots.map((slot)=>{
-            if(slot.id === parseInt(appointment.id)) {
-                slot.isSlotTaken = true;
-                slot.name = appointment.name;
-                slot.phone = appointment.phone;
-            }
-        });
-    }
-    return {isSuccess: isSuccess};
+exports.addBill = function(bill) {
+    let response = {success: false, message: ''};
+    //read file
+    fs.readFile('./server/data/bill.json', 'utf8', function(err, data) {
+        if(err) {
+            response.success = false;
+            response.message = err;
+            return response;
+        } else {
+            let jsonData = JSON.parse(data);
+            jsonData.push(bill);
+            fs.writeFile('./server/data/bill.json', JSON.stringify(jsonData, null, 2), 'utf8', function(err) {
+                if(err) {
+                    throw err;
+                } else {
+                    response.success = true;
+                    response.message = 'success';
+                }
+            });
+        }
+        return response;
+    });
 }

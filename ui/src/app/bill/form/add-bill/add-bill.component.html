@@ -1,33 +1,33 @@
 <div class="billSubHeaderlabelStyle">{{'Add Bill' | uppercase}}</div>
-  <div class="billFormContainer">
-    <form (ngSubmit)="addBill(addBillForm)" #addBillForm="ngForm" fxLayout="column">
-      <mat-form-field>
-        <input name="billName" type="text" id="billName" ngModel matInput placeholder="Name" required>
-      </mat-form-field>
-      <mat-form-field>
-        <input name="dueDate" id="dueDate" ngModel matInput [matDatepicker]="dp3" placeholder="Due date" readonly required>
-        <mat-datepicker-toggle matSuffix [for]="dp3"></mat-datepicker-toggle>
-        <mat-datepicker #dp3 disabled="false"></mat-datepicker>
-      </mat-form-field>
-      <mat-form-field>
-        <mat-select placeholder="Category" ngModel name="category" required>
-          <mat-option *ngFor="let category of getCategories()" [value]="category.value">
-            {{category.viewValue}}
-          </mat-option>
-        </mat-select>
-      </mat-form-field>
-      <mat-form-field>
-        <mat-select placeholder="Company" ngModel name="company" required>
-          <mat-option *ngFor="let company of getCompanies()" [value]="company">
-            {{company}}
-          </mat-option>
-        </mat-select>
-      </mat-form-field>
-      <mat-form-field>
-        <input name="bilAmount" type="number" min="1" step="1" pattern="^[0-9]+(\.[0-9]{1,2})?$" id="bilAmount" ngModel matInput placeholder="Amount" required>
-      </mat-form-field>
-      <div fxFlexAlign="end">
-          <button mat-raised-button color="primary" type="submit" [disabled]="!addBillForm.valid">Add Bill</button>
-      </div>
-    </form>
-  </div>
+<div class="billFormContainer">
+  <form (ngSubmit)="addBill(addBillForm)" #addBillForm="ngForm" fxLayout="column">
+    <mat-form-field>
+      <input name="billName" type="text" id="billName" ngModel matInput placeholder="Name" required>
+    </mat-form-field>
+    <mat-form-field>
+      <input name="dueDate" id="dueDate" ngModel matInput [matDatepicker]="dp3" placeholder="Due date" readonly required>
+      <mat-datepicker-toggle matSuffix [for]="dp3"></mat-datepicker-toggle>
+      <mat-datepicker #dp3 disabled="false"></mat-datepicker>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-select placeholder="Category" ngModel name="category" required>
+        <mat-option *ngFor="let category of getCategories()" [value]="category.value">
+          {{category.viewValue}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-select placeholder="Company" ngModel name="company" required>
+        <mat-option *ngFor="let company of getCompanies()" [value]="company">
+          {{company}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field>
+      <input name="bilAmount" type="number" min="1" step="1" pattern="^[0-9]+(\.[0-9]{1,2})?$" id="bilAmount" ngModel matInput placeholder="Amount" required>
+    </mat-form-field>
+    <div fxFlexAlign="end">
+        <button mat-raised-button color="primary" type="submit" [disabled]="!addBillForm.valid">Add Bill</button>
+    </div>
+  </form>
+</div>

@@ -6,7 +6,7 @@ const cors = require('cors');
 const router = require('./routes');
 const port = process.env.PORT || 5001;
 //set in heroku config vars
-const profile = process.env.PROFILE || "localhost";
+const profile = process.env.PROFILE || 'localhost';
 
 let app = express();
 //enable cors for localhost

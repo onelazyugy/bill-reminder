@@ -1,4 +1,4 @@
-.billSubHeaderlabelStyle {
+.availableBillHeader {
     font-size: 20px;
     margin-top: 15px;
     padding: 20px;
@@ -12,7 +12,7 @@
     border-top-left-radius: 10px;
 }
 
-.billFormContainer > * {
+.availableBillBody {
     font-family: 'Open Sans Condensed', arial, sans;
     background: #FFFFFF;
     padding: 10px;

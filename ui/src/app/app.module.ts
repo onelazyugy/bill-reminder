@@ -11,6 +11,7 @@ import { HomeModule } from './home/home.module';
 import { SettingModule } from './setting/setting.module';
 import { HuniTodoModule } from './huni-todo/huni-todo.module'
 import { ShareModule } from './share/share.module';
+import { BillService } from './bill/service/bill.service';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,7 @@ import { ShareModule } from './share/share.module';
     SettingModule,
     HuniTodoModule
   ],
-  providers: [],
+  providers: [BillService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
