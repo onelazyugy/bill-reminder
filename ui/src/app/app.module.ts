@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http'
 import { NgModule } from '@angular/core';
 
 import { AppAngularMaterialModule } from './app-angular-material.module';
@@ -19,6 +20,7 @@ import { BillService } from './bill/service/bill.service';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     AppAngularMaterialModule,
     AppFlexLayoutModule,
