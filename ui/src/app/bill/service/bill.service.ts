@@ -11,7 +11,7 @@ export class BillService {
 
     getBills(done) {
         const url = CONFIG.url;
-        axios.get(url + '/api/bills').then(result => {
+        axios.get(url + '/api/bill').then(result => {
             const response = result.data;
             if (response) {
                 done(response);

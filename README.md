@@ -12,6 +12,8 @@
 - $ cd to root folder
 - $ npm install
 - $ npm start (this will run your node and express server at http://localhost:5001/)
+- create a .env file and place it in root directory for environment vairable setting (https://github.com/motdotla/dotenv)
+- in the .env file, add a one key/pair value (PROFILE = localhost)
 - $ cd ui (go to /ui folder)
 - $ npm run gulp-local (this will allow you to call node REST services whild running locally)
 - $ ng serve

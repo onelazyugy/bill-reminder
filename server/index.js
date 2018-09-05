@@ -1,17 +1,15 @@
 'use strict'
+require('dotenv').config();
 const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
 const cors = require('cors');
 const router = require('./routes');
 const port = process.env.PORT || 5001;
-//set in heroku config vars
-const profile = process.env.PROFILE || 'localhost';
-
+const env = process.env.NODE_ENV;
 let app = express();
-//enable cors for localhost
-//TODO: 12 factor https://www.npmjs.com/package/dotenv
-if(profile !== 'pr') {
+
+if(env === 'localhost') {
   app.use(cors());
 }
 app.use(bodyParser.json());
