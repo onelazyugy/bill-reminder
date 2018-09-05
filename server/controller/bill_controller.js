@@ -1,5 +1,13 @@
-const reminderService = require('../service/reminder_service');
+const billService = require('../service/bill_service');
 
 exports.addBill = function(req, res) {
-    res.send(reminderService.addBill(req.body));
+    billService.addBill(req.body, function(response) {
+        res.send(response);
+    });    
 };
+
+exports.getBills = function(req, res) {
+    billService.getBills(function(response) {
+        res.send(response);
+    });
+}

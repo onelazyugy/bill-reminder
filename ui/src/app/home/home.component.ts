@@ -13,7 +13,7 @@ export class HomeComponent implements OnInit {
   title = 'Simple Bill Reminder';
   ping = 'pinging...';
   homeViewButtons = buttons;
-  
+
   constructor(private router: Router) { }
 
   ngOnInit() {

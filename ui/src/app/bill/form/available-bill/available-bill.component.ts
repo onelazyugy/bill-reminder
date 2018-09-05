@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Bill } from '../../model/bill.model';
+import { BillService } from '../../service/bill.service';
 
 @Component({
     selector: 'app-available-bill',
@@ -7,12 +8,19 @@ import { Bill } from '../../model/bill.model';
     styleUrls: ['./available-bill.component.css']
 })
 
-export class AvailableBill implements OnInit{
-    private bill = new Bill('', new Date(), '', '', 0);
+export class AvailableBillComponent implements OnInit {
+    private bills: Bill[];
+    isLoading = true;
 
-    constructor() {}
+    constructor(private billService: BillService) {}
 
     ngOnInit(): void {
-        
+        this.billService.getBills(this.done);
+    }
+
+    done = (data) => {
+        console.log('get bills data:', data.bills);
+        this.bills = data.bills;
+        this.isLoading = false;
     }
 }

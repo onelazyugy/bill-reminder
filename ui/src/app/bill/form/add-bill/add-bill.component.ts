@@ -13,7 +13,7 @@ import { BillService } from '../../service/bill.service';
     providers: [DatePipe]
 })
 
-export class AddBillForm implements OnInit{
+export class AddBillFormComponent implements OnInit {
     private categories: BillCategory[] = [
         { value: 'water', viewValue: 'Water' },
         { value: 'gas', viewValue: 'Gas' },
@@ -21,7 +21,7 @@ export class AddBillForm implements OnInit{
     ];
     private companies: any[] = [
         'ATT', 'T-Mobile', 'EMC Jackson', 'Gwinnett Water'
-    ]
+    ];
     private bill = new Bill('', new Date(), '', '', 0);
 
     constructor(private datePipe: DatePipe, private billService: BillService) {}

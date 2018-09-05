@@ -10,6 +10,7 @@ const profile = process.env.PROFILE || 'localhost';
 
 let app = express();
 //enable cors for localhost
+//TODO: 12 factor https://www.npmjs.com/package/dotenv
 if(profile !== 'pr') {
   app.use(cors());
 }

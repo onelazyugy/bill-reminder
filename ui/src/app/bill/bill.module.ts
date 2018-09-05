@@ -7,15 +7,15 @@ import { BillComponent } from './bill.component';
 import { AppAngularMaterialModule } from '../app-angular-material.module';
 import { AppFlexLayoutModule } from '../app-flex-layout.module';
 import { ShareModule } from '../share/share.module';
-import { AddBillForm } from './form/add-bill/add-bill.component';
-import { AvailableBill } from './form/available-bill/available-bill.component';
+import { AddBillFormComponent } from './form/add-bill/add-bill.component';
+import { AvailableBillComponent } from './form/available-bill/available-bill.component';
 
 
 @NgModule({
     declarations: [
         BillComponent,
-        AddBillForm,
-        AvailableBill
+        AddBillFormComponent,
+        AvailableBillComponent
     ],
     imports: [
         CommonModule,

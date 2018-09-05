@@ -8,4 +8,7 @@ module.exports = function (app) {
 
     //add a bill
     app.post('/api/bill', controller.addBill);
+
+    //get all bills
+    app.get('/api/bills', controller.getBills);
 };
