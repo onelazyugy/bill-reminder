@@ -4,12 +4,14 @@ import { LargeButtonComponent } from './button/large-button.component';
 import { AppFlexLayoutModule } from '../app-flex-layout.module';
 import { HeaderTitle } from './header-title/header-title.component';
 import { Breadcrumb } from './breadcrumb/breadcrumb.component';
+import { TrimTextPipe } from './pipe/app.pipe';
 
 @NgModule({
     declarations: [
         LargeButtonComponent,
         HeaderTitle,
-        Breadcrumb
+        Breadcrumb,
+        TrimTextPipe
     ],
     imports: [
         CommonModule, 
@@ -18,7 +20,8 @@ import { Breadcrumb } from './breadcrumb/breadcrumb.component';
     exports: [
         LargeButtonComponent,
         HeaderTitle,
-        Breadcrumb
+        Breadcrumb,
+        TrimTextPipe
     ]
 })
 export class ShareModule {}

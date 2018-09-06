@@ -4,12 +4,14 @@ export class Bill {
     public category: string;
     public company: string;
     public amount: number;
+    public isRecurring: boolean;
 
-    constructor(name: string, dueDate: Date, category: string, company: string, amount: number) {
+    constructor(name: string, dueDate: Date, category: string, company: string, amount: number, isRecurring: boolean) {
         this.name = name;
         this.dueDate = dueDate;
         this.category = category;
         this.company = company;
         this.amount = amount;
+        this.isRecurring = isRecurring;
     }
 }

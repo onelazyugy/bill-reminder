@@ -69,3 +69,11 @@
     margin-left: 20px;
     font-weight: bold;
 }
+
+.availableBillItem {
+    cursor: pointer;
+}
+
+/* mat-list-item:hover {
+    background-color: #73AD21;
+} */

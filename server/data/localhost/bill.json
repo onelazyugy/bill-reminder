@@ -1,9 +1,9 @@
 [
   {
-    "name": "water bill",
-    "dueDate": "2018-09-14T04:00:00.000Z",
-    "category": "water",
-    "company": "Gwinnett Water",
-    "amount": 136.9
+    "name": "Electric bill",
+    "dueDate": "2018-09-21T04:00:00.000Z",
+    "category": "electric",
+    "company": "EMC Jackson",
+    "isRecurring": true
   }
 ]

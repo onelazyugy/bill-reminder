@@ -22,6 +22,7 @@ export class AddBillFormComponent implements OnInit {
     private companies: any[] = [
         'ATT', 'T-Mobile', 'EMC Jackson', 'Gwinnett Water'
     ];
+    isRecurringBill = true;
     message = 'Submitting...';
     isAddingBill = false;
     isErrorAddingBill = false;
@@ -42,7 +43,7 @@ export class AddBillFormComponent implements OnInit {
 
     addBill = (form: NgForm) => {
         this.isAddingBill = true;
-        let bill = new Bill(form.value.billName, form.value.dueDate, form.value.category, form.value.company, form.value.bilAmount);
+        let bill = new Bill(form.value.billName, form.value.dueDate, form.value.category, form.value.company, form.value.bilAmount, form.value.recurringBill);
         this.billService.addBill(bill).subscribe(
             (resp) => {
                 this.isAddingBill = false;

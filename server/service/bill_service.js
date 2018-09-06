@@ -1,10 +1,10 @@
 const fs = require('fs');
 const _ = require('lodash');
-const profile = process.env.PROFILE;
+const billFilePath = process.env.PROFILE === 'prod' ? './server/data/prod/bill.json' : './server/data/localhost/bill.json';
 
 exports.addBill = function(bill, done) {
     let response = {success: false, message: ''};
-    fs.readFile('./server/data/localhost/bill.json', 'utf8', function(err, data) {
+    fs.readFile(billFilePath, 'utf8', function(err, data) {
         if(err) {
             response.success = false;
             response.message = err;
@@ -12,14 +12,14 @@ exports.addBill = function(bill, done) {
         } else {
             let jsonData = JSON.parse(data);
             jsonData.push(bill);
-            fs.writeFile('./server/data/localhost/bill.json', JSON.stringify(jsonData, null, 2), 'utf8', function(err) {
+            fs.writeFile(billFilePath, JSON.stringify(jsonData, null, 2), 'utf8', function(err) {
                 if(err) {
                     response.success = false;
                     response.message = err;
                     done(response);
                 } else {
                     // let's pull the entire data from the file
-                    fs.readFile('./server/data/localhost/bill.json', 'utf8', function(err, bills) {
+                    fs.readFile(billFilePath, 'utf8', function(err, bills) {
                         if(err) {
                             response.success = false;
                             response.message = err;
@@ -39,7 +39,7 @@ exports.addBill = function(bill, done) {
 
 exports.getBills = function(done) {
     let response = {success: false, message: ''};
-    fs.readFile('./server/data/localhost/bill.json', 'utf8', function(err, bills) {
+    fs.readFile(billFilePath, 'utf8', function(err, bills) {
         if(err) {
             response.success = false;
             response.message = err;

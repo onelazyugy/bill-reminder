@@ -8,8 +8,8 @@
     <mat-list *ngIf="bills.length > 0">
       <span class="availableBillDueDateHeader">Due Date</span><span class="availableBillNameHeader">Bill Name</span>
       <mat-divider></mat-divider>
-      <div *ngFor="let bill of bills; let i = index">
-        <mat-list-item><span class="availableListNumber">{{i+1}}</span><span class="availableBillDueDate">{{bill.dueDate | date:'MM/dd/yyyy'}}</span><span>{{bill.name}}</span></mat-list-item>
+      <div *ngFor="let bill of bills; let i = index" class="availableBillItem">
+        <mat-list-item><span class="availableListNumber">{{i+1}}</span><span class="availableBillDueDate">{{bill.dueDate | date:'MM/dd/yyyy'}}</span><span>{{bill.name | trimTextPipe:20}}</span></mat-list-item>
         <mat-divider></mat-divider>
       </div>
     </mat-list>

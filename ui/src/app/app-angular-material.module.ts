@@ -10,6 +10,8 @@ import {MatBadgeModule} from '@angular/material/badge';
 import {MatChipsModule} from '@angular/material/chips';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatListModule} from '@angular/material/list';
+import {MatRadioModule} from '@angular/material/radio';
+import {MatCheckboxModule} from '@angular/material/checkbox';
 
 @NgModule({
     declarations: [],
@@ -24,7 +26,9 @@ import {MatListModule} from '@angular/material/list';
         MatBadgeModule,
         MatChipsModule,
         MatDividerModule,
-        MatListModule
+        MatListModule,
+        MatRadioModule,
+        MatCheckboxModule
     ]
 })
 export class AppAngularMaterialModule {}

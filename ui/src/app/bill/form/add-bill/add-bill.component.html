@@ -24,8 +24,11 @@
       </mat-select>
     </mat-form-field>
     <mat-form-field>
-      <input name="bilAmount" type="number" min="1" step="1" pattern="^[0-9]+(\.[0-9]{1,2})?$" id="bilAmount" ngModel matInput placeholder="Amount" required>
+      <input name="billAmount" type="number" min="1" step="1" pattern="^[0-9]+(\.[0-9]{1,2})?$" id="billAmount" ngModel matInput placeholder="Amount" required>
     </mat-form-field>
+    <div style="margin-bottom: 5px;">
+        <mat-checkbox id="recurringBill" name="recurringBill" [(ngModel)]="isRecurringBill" required="true">Recurring bill?</mat-checkbox>
+    </div>
     <div *ngIf="isAddingBill">{{message}}</div>
     <div *ngIf="isErrorAddingBill">
       <div class="addBillError">{{message}}</div>
