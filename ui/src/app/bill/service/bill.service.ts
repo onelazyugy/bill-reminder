@@ -1,8 +1,10 @@
 import { Injectable } from '@angular/core';
 import { Bill } from '../model/bill.model';
-import { HttpClient, HttpErrorResponse} from  '@angular/common/http';
+import { HttpClient, HttpErrorResponse} from '@angular/common/http';
 import { CONFIG } from '../../config/globals';
 import { BillResponse } from '../inteface/bill-response.interface';
+import { Observable } from 'rxjs';
+import { HttpResponse } from '@angular/common/http';
 
 @Injectable()
 export class BillService {
@@ -23,7 +25,7 @@ export class BillService {
         // });
     }
 
-    getBills = () => {
+    getBills(): Observable<HttpResponse<BillResponse>> {
         return this.httpClient.get<BillResponse>(this.apiURL + '/api/bill', { observe: 'response' });
             // .pipe(this.catchError(this.handleError));
     }
@@ -47,7 +49,7 @@ export class BillService {
         }
         // return an observable with a user-facing error message
         return this.throwError('Something bad happened; please try again later.');
-    };
+    }
 
     private throwError(message) {
         return message;

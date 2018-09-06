@@ -12,7 +12,7 @@ import { BillResponse } from '../../inteface/bill-response.interface';
 export class AvailableBillComponent implements OnInit {
     private bills: Bill[];
     private billResponse: BillResponse;
-    private loading: string = 'Loading...';
+    private loading = 'Loading...';
 
     constructor(private billService: BillService) {}
 

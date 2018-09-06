@@ -1,4 +1,4 @@
-import { Bill } from "../model/bill.model";
+import { Bill } from '../model/bill.model';
 
 export interface BillResponse {
     success: boolean;
