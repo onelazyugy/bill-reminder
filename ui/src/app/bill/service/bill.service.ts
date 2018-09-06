@@ -3,14 +3,21 @@ import { Bill } from '../model/bill.model';
 import { HttpClient, HttpErrorResponse} from '@angular/common/http';
 import { CONFIG } from '../../config/globals';
 import { BillResponse } from '../inteface/bill-response.interface';
-import { Observable } from 'rxjs';
+import { Observable, throwError } from 'rxjs';
+import { catchError, retry } from 'rxjs/operators';
 import { HttpResponse } from '@angular/common/http';
 
 @Injectable()
 export class BillService {
-    // private bills: Bill[];
     private apiURL = CONFIG.url;
-    constructor(private httpClient: HttpClient){}
+    constructor(private httpClient: HttpClient) {}
+
+    /**
+     * https://alligator.io/angular/httpclient-intro/
+     * https://www.djamware.com/post/5b87894280aca74669894414/angular-6-httpclient-consume-restful-api-example
+     * https://www.metaltoad.com/blog/angular-5-making-api-calls-httpclient-service
+     * https://malcoded.com/posts/angular-fundamentals-http
+     */
 
     addBill = (bill: Bill) => {
         return this.httpClient.post(this.apiURL + '/api/bill', bill);
@@ -25,9 +32,12 @@ export class BillService {
         // });
     }
 
-    getBills(): Observable<HttpResponse<BillResponse>> {
-        return this.httpClient.get<BillResponse>(this.apiURL + '/api/bill', { observe: 'response' });
-            // .pipe(this.catchError(this.handleError));
+    fetchBills(): Observable<HttpResponse<BillResponse>> {
+        return this.httpClient.get<BillResponse>(this.apiURL + '/api/bill', { observe: 'response' })
+            .pipe(
+                retry(3), // retry a failed request up to 3 times
+                catchError(this.handleError) // handle error
+            );
     }
 
     editBill = () => {
@@ -48,15 +58,7 @@ export class BillService {
             console.error(`Backend returned code ${error.status}, ` + `body was: ${error.error}`);
         }
         // return an observable with a user-facing error message
-        return this.throwError('Something bad happened; please try again later.');
-    }
-
-    private throwError(message) {
-        return message;
-    }
-
-    private catchError = () => {
-
+        return throwError('Something bad happened; please try again later.');
     }
 }
 

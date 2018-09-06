@@ -1,5 +1,10 @@
 <div class="availableBillHeader">{{'Available Bill' | uppercase}}</div>
 
 <div class="availableBillBody">
-  
+    <p *ngIf="isLoadingData()">Loading...</p>
+    <p *ngIf="isErrorLoadingData()">{{getLoadingMessage()}}</p>
+    <p *ngIf="getBills().length === 0">No data available!</p>
+    <ul>
+        <li *ngFor="let bill of getBills()">date: {{bill.date}}</li>
+    </ul>
 </div>

@@ -10,26 +10,54 @@ import { BillResponse } from '../../inteface/bill-response.interface';
 })
 
 export class AvailableBillComponent implements OnInit {
-    private bills: Bill[];
-    private billResponse: BillResponse;
-    private loading = 'Loading...';
+    private bills: Bill[] = [];
+    private loadingMessage = 'Loading...';
+    private isLoading = true;
+    private isError = false;
 
     constructor(private billService: BillService) {}
 
     ngOnInit() {
-        this.getBills();
+        this.fetchBills();
     }
 
-    private getBills = () => {
-        this.billService.getBills().subscribe(this.successCallback, this.errorCallback);
+    private fetchBills = () => {
+        this.billService.fetchBills().subscribe(
+            (resp) => {
+                let billResponse: BillResponse;
+                if (resp && resp.status === 200) {
+                    billResponse = { ...resp.body };
+                    this.bills = billResponse.bills;
+                    console.log('this.bills:', this.bills);
+                    this.isLoading = false;
+                }
+            },
+            (error) => {
+                console.log(error);
+                this.isLoading = false;
+                this.isError = true;
+                this.loadingMessage = error;
+            }
+        );
     }
 
-    private successCallback(resp) {
-        this.billResponse = { ...resp.body };
-        console.log('get bills response:', this.billResponse);
+    public getBills = () => {
+        return this.bills;
     }
 
-    private errorCallback(error) {
-        console.log('error:', error);
+    public callback = () => {
+
+    }
+
+    public isLoadingData = () => {
+        return this.isLoading;
+    }
+
+    public getLoadingMessage = () => {
+        return this.loadingMessage;
+    }
+
+    public isErrorLoadingData = () => {
+        return this.isError;
     }
 }
