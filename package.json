@@ -19,7 +19,7 @@
   },
   "scripts": {
     "start-dev": "NODE_ENV=localhost nodemon server/index.js",
-    "start": "node server/index.js",
+    "start": "NODE_ENV=prod node server/index.js",
     "postinstall": "cd ui/ && npm install && npm run build-prod"
   },
   "devDependencies": {
