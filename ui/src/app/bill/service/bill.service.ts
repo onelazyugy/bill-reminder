@@ -1,15 +1,16 @@
 import { Injectable } from '@angular/core';
 import { Bill } from '../model/bill.model';
-import { HttpClient, HttpErrorResponse} from '@angular/common/http';
+import { HttpClient, HttpErrorResponse, HttpHeaders} from '@angular/common/http';
 import { CONFIG } from '../../config/globals';
 import { BillResponse } from '../inteface/bill-response.interface';
-import { Observable, throwError } from 'rxjs';
+import { Observable, throwError, Subject } from 'rxjs';
 import { catchError, retry } from 'rxjs/operators';
 import { HttpResponse } from '@angular/common/http';
 
 @Injectable()
 export class BillService {
     private apiURL = CONFIG.url;
+    billsChanged = new Subject<Bill[]>();
     constructor(private httpClient: HttpClient) {}
 
     /**
@@ -19,24 +20,26 @@ export class BillService {
      * https://malcoded.com/posts/angular-fundamentals-http
      */
 
-    addBill = (bill: Bill) => {
-        return this.httpClient.post(this.apiURL + '/api/bill', bill);
-        // axios.post(this.apiURL + '/api/bill', bill).then(result => {
-        //     const response = result.data;
-        //     if (response && response.success) {
-        //         this.bills = response.bills;
-        //     }
-        // })
-        // .catch(error => {
-        //     console.log('ERROR:', error);
-        // });
+    addBill (bill: Bill): Observable<BillResponse> {
+        // return this.httpClient.post(this.apiURL + '/api/bill', bill);
+        const httpOptions = {
+            headers: new HttpHeaders({
+                'Content-Type': 'application/json'
+            })
+        }
+        return this.httpClient.post<BillResponse>(this.apiURL + '/api/bill', bill, httpOptions)
+            .pipe(catchError(this.handleError))
     }
 
+    /**
+     * retry a failed request up to 3 times
+     * handle error
+     */
     fetchBills(): Observable<HttpResponse<BillResponse>> {
         return this.httpClient.get<BillResponse>(this.apiURL + '/api/bill', { observe: 'response' })
             .pipe(
-                retry(3), // retry a failed request up to 3 times
-                catchError(this.handleError) // handle error
+                retry(3),
+                catchError(this.handleError)
             );
     }
 
@@ -59,6 +62,11 @@ export class BillService {
         }
         // return an observable with a user-facing error message
         return throwError('Something bad happened; please try again later.');
+    }
+
+    public setBills = (bills) => {
+        this.billsChanged.next(bills);
+        // this.bills = bills;
     }
 }
 

@@ -1,7 +1,7 @@
 .availableBillHeader {
     font-size: 20px;
     margin-top: 15px;
-    padding: 20px;
+    padding: 10px;
     background: #4D4D4D;
     text-transform: uppercase;
     font-family: 'Open Sans Condensed', sans-serif;
@@ -21,4 +21,18 @@
     -webkit-box-shadow:  0px 0px 15px rgba(0, 0, 0, 0.22);
     border-bottom-right-radius: 10px;
     border-bottom-left-radius: 10px;
+}
+
+.number {
+    background: #1abc9c;
+    color: #fff;
+    height: 30px;
+    width: 30px;
+    display: inline-block;
+    font-size: 0.8em;
+    margin-right: 4px;
+    line-height: 30px;
+    text-align: center;
+    text-shadow: 0 1px 0 rgba(255,255,255,0.2);
+    border-radius: 15px 15px 15px 0px;
 }

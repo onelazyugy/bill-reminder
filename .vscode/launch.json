@@ -12,7 +12,10 @@
             "program": "${workspaceFolder}/server/index.js",
             "outFiles": [
                 "${workspaceFolder}/**/*.js"
-            ]
+            ],
+            "env": {
+                "NODE_ENV": "localhost"
+            }
         }
     ]
 }

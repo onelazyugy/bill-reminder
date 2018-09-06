@@ -22,7 +22,7 @@ export class AddBillFormComponent implements OnInit {
     private companies: any[] = [
         'ATT', 'T-Mobile', 'EMC Jackson', 'Gwinnett Water'
     ];
-    private bill = new Bill('', new Date(), '', '', 0);
+    // private bill = new Bill('', new Date(), '', '', 0);
 
     constructor(private datePipe: DatePipe, private billService: BillService) {}
 
@@ -45,14 +45,17 @@ export class AddBillFormComponent implements OnInit {
         const company = form.value.company;
         const amount = form.value.bilAmount;
 
-        this.bill.name = billName;
-        // this.bill.dueDate = this.datePipe.transform(dueDate, 'MM/dd/yyyy');
-        this.bill.dueDate = dueDate;
-        this.bill.category = category;
-        this.bill.company = company;
-        this.bill.amount = amount;
-        console.log('bill', this.bill);
-        const result = this.billService.addBill(this.bill);
-        console.log(result);
+        let bill = new Bill(billName, dueDate, category, company, amount);
+        console.log('bill', bill);
+        this.billService.addBill(bill).subscribe(
+            (resp) => {
+                console.log(resp);
+                this.billService.setBills(resp.bills);
+            },
+            (error) => {
+                console.error(error);
+            }
+        )
+        
     }
 }

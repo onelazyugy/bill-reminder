@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Bill } from '../../model/bill.model';
 import { BillService } from '../../service/bill.service';
 import { BillResponse } from '../../inteface/bill-response.interface';
+import { Subscription } from 'rxjs';
 
 @Component({
     selector: 'app-available-bill',
@@ -11,6 +12,7 @@ import { BillResponse } from '../../inteface/bill-response.interface';
 
 export class AvailableBillComponent implements OnInit {
     private bills: Bill[] = [];
+    subscription: Subscription;
     private loadingMessage = 'Loading...';
     private isLoading = true;
     private isError = false;
@@ -19,6 +21,15 @@ export class AvailableBillComponent implements OnInit {
 
     ngOnInit() {
         this.fetchBills();
+        this.subscription = this.billService.billsChanged.subscribe(
+        (bills: Bill[]) => {
+            this.bills = bills;
+            this.isLoading = false;
+        });
+    }
+
+    ngOnDestroy() {
+        this.subscription.unsubscribe();
     }
 
     private fetchBills = () => {
@@ -27,13 +38,14 @@ export class AvailableBillComponent implements OnInit {
                 let billResponse: BillResponse;
                 if (resp && resp.status === 200) {
                     billResponse = { ...resp.body };
-                    this.bills = billResponse.bills;
-                    console.log('this.bills:', this.bills);
-                    this.isLoading = false;
+                    const bills = billResponse.bills;
+                    // this.isLoading = false;
+                    // load billService with data
+                    this.billService.setBills(bills);
                 }
             },
             (error) => {
-                console.log(error);
+                console.error(error);
                 this.isLoading = false;
                 this.isError = true;
                 this.loadingMessage = error;

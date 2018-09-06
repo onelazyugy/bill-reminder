@@ -1,10 +1,44 @@
 [
   {
-    "date": "9/04/2018",
-    "amount": 91.9
+    "name": "gas bill",
+    "dueDate": "2018-09-07T04:00:00.000Z",
+    "category": "gas",
+    "company": "T-Mobile",
+    "amount": 12.03
   },
   {
-    "date": "8/04/2018",
-    "amount": 10.2
+    "name": "mobile bill",
+    "dueDate": "2018-09-07T04:00:00.000Z",
+    "category": "gas",
+    "company": "T-Mobile",
+    "amount": 99.03
+  },
+  {
+    "name": "new bill",
+    "dueDate": "2018-09-07T04:00:00.000Z",
+    "category": "gas",
+    "company": "T-Mobile",
+    "amount": 10.03
+  },
+  {
+    "name": "next bill",
+    "dueDate": "2018-09-15T04:00:00.000Z",
+    "category": "electric",
+    "company": "EMC Jackson",
+    "amount": 100.45
+  },
+  {
+    "name": "next bill 2",
+    "dueDate": "2018-09-13T04:00:00.000Z",
+    "category": "electric",
+    "company": "EMC Jackson",
+    "amount": 100.45
+  },
+  {
+    "name": "too many bills",
+    "dueDate": "2018-09-12T04:00:00.000Z",
+    "category": "gas",
+    "company": "ATT",
+    "amount": 122.9
   }
 ]

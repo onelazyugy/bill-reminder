@@ -1,4 +1,4 @@
-<div class="billSubHeaderlabelStyle">{{'Add Bill' | uppercase}}</div>
+<div class="billSubHeaderlabelStyle"><span class="number">1</span> {{'Add Bill' | uppercase}}</div>
 <div class="billFormContainer">
   <form (ngSubmit)="addBill(addBillForm)" #addBillForm="ngForm" fxLayout="column">
     <mat-form-field>
@@ -26,8 +26,8 @@
     <mat-form-field>
       <input name="bilAmount" type="number" min="1" step="1" pattern="^[0-9]+(\.[0-9]{1,2})?$" id="bilAmount" ngModel matInput placeholder="Amount" required>
     </mat-form-field>
-    <div fxFlexAlign="end">
-        <button mat-raised-button color="primary" type="submit" [disabled]="!addBillForm.valid">Add Bill</button>
+    <div style="width: 100%">
+        <button class="addBillButton" mat-raised-button color="primary" type="submit" [disabled]="!addBillForm.valid"><span class="addBillText">Add Bill</span></button>
     </div>
   </form>
 </div>
