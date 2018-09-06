@@ -24,7 +24,7 @@
 }
 
 .number {
-    background: #1abc9c;
+    background: #73AD21;
     color: #fff;
     height: 30px;
     width: 30px;
@@ -35,4 +35,37 @@
     text-align: center;
     text-shadow: 0 1px 0 rgba(255,255,255,0.2);
     border-radius: 15px 15px 15px 0px;
+}
+
+.availableBillError {
+    border-style: solid;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    border-color: red;
+    border-width: thin;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    text-align: center;
+}
+
+.availableListNumber {
+    background: #4D4D4D;
+    padding: 1px 5px 1px 5px;
+    margin-right: 5px;
+    border-radius: 3px;
+    color: white;
+}
+
+.availableBillDueDate {
+    margin-right: 10px;
+}
+
+.availableBillDueDateHeader {
+    margin-left: 40px;
+    font-weight: bold;
+}
+
+.availableBillNameHeader {
+    margin-left: 20px;
+    font-weight: bold;
 }

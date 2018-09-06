@@ -11,11 +11,11 @@ import { Subscription } from 'rxjs';
 })
 
 export class AvailableBillComponent implements OnInit {
-    private bills: Bill[] = [];
+    bills: Bill[] = [];
     subscription: Subscription;
-    private loadingMessage = 'Loading...';
-    private isLoading = true;
-    private isError = false;
+    message = 'Loading...';
+    isLoading = true;
+    isError = false;
 
     constructor(private billService: BillService) {}
 
@@ -48,28 +48,8 @@ export class AvailableBillComponent implements OnInit {
                 console.error(error);
                 this.isLoading = false;
                 this.isError = true;
-                this.loadingMessage = error;
+                this.message = error;
             }
         );
-    }
-
-    public getBills = () => {
-        return this.bills;
-    }
-
-    public callback = () => {
-
-    }
-
-    public isLoadingData = () => {
-        return this.isLoading;
-    }
-
-    public getLoadingMessage = () => {
-        return this.loadingMessage;
-    }
-
-    public isErrorLoadingData = () => {
-        return this.isError;
     }
 }

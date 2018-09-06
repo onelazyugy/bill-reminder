@@ -1,9 +1,16 @@
-<div class="availableBillHeader"><span class="number">2</span>{{'Available Bill' | uppercase}}</div>
+<div class="availableBillHeader"><span class="number">2</span>&nbsp;{{'Available Bill' | uppercase}}</div>
 <div class="availableBillBody">
-    <p *ngIf="isLoadingData()">Loading...</p>
-    <p *ngIf="isErrorLoadingData()">{{getLoadingMessage()}}</p>
-    <p *ngIf="getBills().length === 0 && !isLoadingData()">No data available!</p>
-    <ol>
-        <li *ngFor="let bill of getBills()">name: {{bill.name}} due: {{bill.dueDate | date:'MM/dd/yyyy'}}</li>
-    </ol>
+    <div *ngIf="isLoading">{{message}}</div>
+    <div *ngIf="isError">
+      <div class="availableBillError">{{message}}</div>
+    </div>
+    <div *ngIf="bills.length === 0 && !isLoading">No bill available!</div>
+    <mat-list *ngIf="bills.length > 0">
+      <span class="availableBillDueDateHeader">Due Date</span><span class="availableBillNameHeader">Bill Name</span>
+      <mat-divider></mat-divider>
+      <div *ngFor="let bill of bills; let i = index">
+        <mat-list-item><span class="availableListNumber">{{i+1}}</span><span class="availableBillDueDate">{{bill.dueDate | date:'MM/dd/yyyy'}}</span><span>{{bill.name}}</span></mat-list-item>
+        <mat-divider></mat-divider>
+      </div>
+    </mat-list>
 </div>

@@ -22,7 +22,9 @@ export class AddBillFormComponent implements OnInit {
     private companies: any[] = [
         'ATT', 'T-Mobile', 'EMC Jackson', 'Gwinnett Water'
     ];
-    // private bill = new Bill('', new Date(), '', '', 0);
+    message = 'Submitting...';
+    isAddingBill = false;
+    isErrorAddingBill = false;
 
     constructor(private datePipe: DatePipe, private billService: BillService) {}
 
@@ -39,23 +41,21 @@ export class AddBillFormComponent implements OnInit {
     }
 
     addBill = (form: NgForm) => {
-        const billName = form.value.billName;
-        const dueDate = form.value.dueDate;
-        const category = form.value.category;
-        const company = form.value.company;
-        const amount = form.value.bilAmount;
-
-        let bill = new Bill(billName, dueDate, category, company, amount);
-        console.log('bill', bill);
+        this.isAddingBill = true;
+        let bill = new Bill(form.value.billName, form.value.dueDate, form.value.category, form.value.company, form.value.bilAmount);
         this.billService.addBill(bill).subscribe(
             (resp) => {
-                console.log(resp);
+                this.isAddingBill = false;
                 this.billService.setBills(resp.bills);
+                this.isErrorAddingBill = false;
+                form.resetForm();
             },
             (error) => {
+                this.isAddingBill = false;
+                this.isErrorAddingBill = true;
+                this.message = error;
                 console.error(error);
             }
         )
-        
     }
 }
