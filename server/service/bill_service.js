@@ -1,6 +1,6 @@
 const fs = require('fs');
 const _ = require('lodash');
-const billFilePath = process.env.PROFILE === 'prod' ? './server/data/prod/bill.json' : './server/data/localhost/bill.json';
+const billFilePath = process.env.NODE_ENV === 'prod' ? './server/data/prod/bill.json' : './server/data/localhost/bill.json';
 
 exports.addBill = function(bill, done) {
     let response = {success: false, message: ''};
