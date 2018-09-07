@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Bill } from '../../model/bill.model';
 import { BillService } from '../../service/bill.service';
-import { BillResponse } from '../../inteface/bill-response.interface';
 import { Subscription } from 'rxjs';
+import { BillResponse } from '../../model/bill-inteface.model';
 
 @Component({
     selector: 'app-available-bill',
@@ -10,7 +10,7 @@ import { Subscription } from 'rxjs';
     styleUrls: ['./available-bill.component.css']
 })
 
-export class AvailableBillComponent implements OnInit {
+export class AvailableBillComponent implements OnInit, OnDestroy {
     bills: Bill[] = [];
     subscription: Subscription;
     message = 'Loading...';

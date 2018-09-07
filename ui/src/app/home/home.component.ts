@@ -40,8 +40,8 @@ export class HomeComponent implements OnInit {
   }
 
   onClick(btnId: Number) {
-    this.homeViewButtons.map((button)=>{
-      if(button.id === btnId) {
+    this.homeViewButtons.map((button) => {
+      if (button.id === btnId) {
         this.router.navigate([button.route]);
       }
     });

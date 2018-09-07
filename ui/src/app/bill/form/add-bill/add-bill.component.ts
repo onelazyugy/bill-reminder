@@ -1,10 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { DatePipe } from '@angular/common';
-
-import { BillCategory } from '../../inteface/bill-category.interface';
 import { Bill } from '../../model/bill.model';
 import { BillService } from '../../service/bill.service';
+import { BillCategory } from '../../model/bill-inteface.model';
 
 @Component({
     selector: 'app-add-bill-form',
@@ -30,7 +29,7 @@ export class AddBillFormComponent implements OnInit {
     constructor(private datePipe: DatePipe, private billService: BillService) {}
 
     ngOnInit(): void {
-        
+
     }
 
     getCategories = () => {
@@ -43,7 +42,8 @@ export class AddBillFormComponent implements OnInit {
 
     addBill = (form: NgForm) => {
         this.isAddingBill = true;
-        let bill = new Bill(form.value.billName, form.value.dueDate, form.value.category, form.value.company, form.value.bilAmount, form.value.recurringBill);
+        const bill = new Bill(form.value.billName, form.value.dueDate, form.value.category,
+            form.value.company, form.value.bilAmount, form.value.recurringBill);
         this.billService.addBill(bill).subscribe(
             (resp) => {
                 this.isAddingBill = false;
@@ -57,6 +57,6 @@ export class AddBillFormComponent implements OnInit {
                 this.message = error;
                 console.error(error);
             }
-        )
+        );
     }
 }

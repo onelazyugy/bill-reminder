@@ -2,10 +2,10 @@ import { Injectable } from '@angular/core';
 import { Bill } from '../model/bill.model';
 import { HttpClient, HttpErrorResponse, HttpHeaders} from '@angular/common/http';
 import { CONFIG } from '../../config/globals';
-import { BillResponse } from '../inteface/bill-response.interface';
 import { Observable, throwError, Subject } from 'rxjs';
 import { catchError, retry } from 'rxjs/operators';
 import { HttpResponse } from '@angular/common/http';
+import { BillResponse } from '../model/bill-inteface.model';
 
 @Injectable()
 export class BillService {
@@ -26,9 +26,9 @@ export class BillService {
             headers: new HttpHeaders({
                 'Content-Type': 'application/json'
             })
-        }
+        };
         return this.httpClient.post<BillResponse>(this.apiURL + '/api/bill', bill, httpOptions)
-            .pipe(catchError(this.handleError))
+            .pipe(catchError(this.handleError));
     }
 
     /**
@@ -56,7 +56,7 @@ export class BillService {
      * The backend returned an unsuccessful response code. (else condition)
      * The response body may contain clues as to what went wrong. (else condition)
      * return an observable with a user-facing error message
-     * @param error 
+     * @param error
      */
     private handleError(error: HttpErrorResponse) {
         if (error.error instanceof ErrorEvent) {

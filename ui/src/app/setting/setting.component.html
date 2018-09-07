@@ -1,2 +1,44 @@
-<header-title [headerTitle]="'Settings'"></header-title>
-<app-breadcrumb (click)="back()"></app-breadcrumb>
+<mat-sidenav-container class="navcontainer">
+    <mat-sidenav #sidenav [mode]="mode.value" style="width:50%">
+        <div fxLayout="column" fxLayoutGap="5%">
+            <div (click)="sidenav.toggle()" class="material-icons hamburgerMenu"><span class="pointer">menu</span></div>
+            <div fxLayout="row">
+                <div fxLayout="row" (click)="back()" class="pointer">
+                    <div class="material-icons">home</div>
+                    <div style="padding-top:5px;">HOME</div>
+                </div>                
+            </div>
+            <div fxLayout="row">
+                <div fxLayout="row" class="pointer">
+                    <div class="material-icons">account_circle</div>
+                    <div style="padding-top:5px;">PROFILE</div>
+                </div>
+            </div>
+            <div fxLayout="row">
+                <div fxLayout="row" class="pointer">
+                    <div class="material-icons">credit_card</div>
+                    <div style="padding-top:5px;">BILLS</div>
+                </div>
+            </div>
+            <div fxLayout="row">
+                <div fxLayout="row" class="pointer">
+                    <div class="material-icons">shopping_basket</div>
+                    <div style="padding-top:5px;">CHORES</div>
+                </div>
+            </div>
+            <div fxLayout="row">
+                <div fxLayout="row" class="pointer">
+                    <div class="material-icons">today</div>
+                    <div style="padding-top:5px;">HUNI-TODO</div>
+                </div>
+            </div>
+        </div>         
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+        <div fxLayout="row" fxLayoutGap="30%">
+            <div (click)="sidenav.toggle()" class="material-icons hamburgerMenu"><span class="pointer">menu</span></div>
+            <header-title [headerTitle]="'Settings'"></header-title>          
+        </div> 
+    </mat-sidenav-content>
+</mat-sidenav-container>

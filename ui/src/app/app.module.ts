@@ -10,7 +10,7 @@ import { ChoreModule } from './chore/chore.module';
 import { AppRoutingModule } from './app-routing.module';
 import { HomeModule } from './home/home.module';
 import { SettingModule } from './setting/setting.module';
-import { HuniTodoModule } from './huni-todo/huni-todo.module'
+import { HuniTodoModule } from './huni-todo/huni-todo.module';
 import { ShareModule } from './share/share.module';
 import { BillService } from './bill/service/bill.service';
 

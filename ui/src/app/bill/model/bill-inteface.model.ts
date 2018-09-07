@@ -5,3 +5,8 @@ export interface BillResponse {
     message: string;
     bills: Bill[];
 }
+
+export interface BillCategory {
+    value: string;
+    viewValue: string;
+}

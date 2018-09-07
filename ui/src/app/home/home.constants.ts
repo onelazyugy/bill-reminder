@@ -56,7 +56,7 @@ const btnChores = {
             'font-size': '20px'
         }
     }
-}
+};
 
 const btnHuniTodo = {
     id: 3,
@@ -75,7 +75,7 @@ const btnHuniTodo = {
             'font-size': '20px'
         }
     }
-}
+};
 
 const buttons = [btnSettings, btnBills, btnChores, btnHuniTodo];
 export { buttons };

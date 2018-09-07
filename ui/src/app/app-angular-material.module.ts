@@ -12,6 +12,7 @@ import {MatDividerModule} from '@angular/material/divider';
 import {MatListModule} from '@angular/material/list';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatSidenavModule, MatSidenav} from '@angular/material/sidenav';
 
 @NgModule({
     declarations: [],
@@ -28,7 +29,8 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
         MatDividerModule,
         MatListModule,
         MatRadioModule,
-        MatCheckboxModule
+        MatCheckboxModule,
+        MatSidenavModule,
     ]
 })
 export class AppAngularMaterialModule {}
