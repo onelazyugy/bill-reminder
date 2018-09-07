@@ -8,10 +8,14 @@ import {FormControl} from '@angular/forms';
   styleUrls: ['./setting.component.css']
 })
 export class SettingComponent implements OnInit {
-  mode = new FormControl('over');
+
   constructor(private router: Router) {}
 
   ngOnInit() {
+  }
+
+  goToMenuItem = (itemIndex) => {
+    console.log('item index:', itemIndex);
   }
 
   back = () => {
