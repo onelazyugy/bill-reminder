@@ -3,13 +3,15 @@ import { CommonModule } from '@angular/common';
 import { ShareModule } from '../../share/share.module';
 import { AppAngularMaterialModule } from '../../app-angular-material.module';
 import { AppFlexLayoutModule } from '../../app-flex-layout.module';
-import { SettingChoreMenuItem } from './chores/setting-chore-menu-item.component';
-import { SettingBillMenuItem } from './bill/setting-bill-menu-item.component';
+import { SettingChoreMenuItemComponent } from './chores/setting-chore-menu-item.component';
+import { SettingBillMenuItemComponent } from './bill/setting-bill-menu-item.component';
+import { DynamicMenuItemComponent } from './dynamic-menu-item.component';
 
 @NgModule({
     declarations: [
-        SettingChoreMenuItem,
-        SettingBillMenuItem
+        SettingChoreMenuItemComponent,
+        SettingBillMenuItemComponent,
+        DynamicMenuItemComponent
     ],
     imports: [
         CommonModule,
@@ -18,8 +20,9 @@ import { SettingBillMenuItem } from './bill/setting-bill-menu-item.component';
         AppFlexLayoutModule
     ],
     exports: [
-        SettingChoreMenuItem,
-        SettingBillMenuItem
+        SettingChoreMenuItemComponent,
+        SettingBillMenuItemComponent,
+        DynamicMenuItemComponent
     ]
 })
 export class SettingMenuItemModule {}
