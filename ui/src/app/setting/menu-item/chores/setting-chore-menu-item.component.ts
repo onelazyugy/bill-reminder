@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
     styleUrls: ['./setting-chore-menu-item.component.css']
 })
 export class SettingChoreMenuItemComponent implements OnInit {
+    showNum = 0;
     constructor() {}
 
     ngOnInit() {

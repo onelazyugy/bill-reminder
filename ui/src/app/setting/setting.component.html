@@ -1,5 +1,5 @@
-<mat-sidenav-container class="navcontainer">
-    <mat-sidenav #sidenav style="width:40%">
+<mat-sidenav-container>
+    <mat-sidenav #sidenav class="sideMenu">
         <div fxLayout="column" fxLayoutGap="5%">
             <div (click)="sidenav.toggle()" class="material-icons hamburgerMenu"><span class="pointer">menu</span></div>
             <div *ngFor="let component of components">
@@ -14,7 +14,7 @@
         </div>
     </mat-sidenav>
 
-    <mat-sidenav-content>
+    <mat-sidenav-content class="sideMenuContent">
         <div fxLayout="row" fxLayoutGap="30%">
             <div (click)="sidenav.toggle()" class="material-icons hamburgerMenu"><span class="pointer">menu</span></div>
             <header-title [headerTitle]="'Settings'"></header-title>
@@ -27,3 +27,4 @@
         </div>
     </mat-sidenav-content>
 </mat-sidenav-container>
+

@@ -1,15 +1,15 @@
-.navcontainer {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
+.sideMenu {
+    width: 40%;
 }
 
 .hamburgerMenu {
     margin-right: 30%;
     margin-top: 10px;
     font-size: xx-large;
+}
+
+.sideMenuContent {
+    min-height:250px;
 }
 
 .pointer {

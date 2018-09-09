@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import {FormControl} from '@angular/forms';
 import { SettingBillMenuItemComponent } from './menu-item/bill/setting-bill-menu-item.component';
@@ -7,16 +7,17 @@ import { SettingProfileMenuItemComponent } from './menu-item/profile/setting-pro
 
 import { MatSidenav } from '@angular/material/sidenav';
 import { SettingHuniTodoMenuItemComponent } from './menu-item/huni-todo/setting-huni-todo-menu-item.component';
+import { MenuItem } from './model/setting-interface.model';
 
 @Component({
   selector: 'app-setting',
   templateUrl: './setting.component.html',
   styleUrls: ['./setting.component.css']
 })
-export class SettingComponent implements OnInit, AfterViewInit {
+export class SettingComponent implements OnInit {
   @ViewChild('sidenav') sidenav: MatSidenav;
   componentData = null;
-  components: any[] = [
+  components: MenuItem[] = [
     {
       id: 0,
       icon: 'credit_card',
@@ -46,10 +47,6 @@ export class SettingComponent implements OnInit, AfterViewInit {
   constructor(private router: Router) {}
 
   ngOnInit() {
-  }
-
-  ngAfterViewInit(): void {
-    // console.log(this.helloTemplate);
   }
 
   loadMenuItem = (itemIndex) => {

@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
     styleUrls: ['./setting-profile-menu-item.component.css']
 })
 export class SettingProfileMenuItemComponent implements OnInit {
+    showNum = 0;
     constructor() {}
 
     ngOnInit() {

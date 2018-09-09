@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
     styleUrls: ['./setting-huni-todo-menu-item.component.css']
 })
 export class SettingHuniTodoMenuItemComponent implements OnInit {
+    showNum = 0;
     constructor() {}
 
     ngOnInit() {
