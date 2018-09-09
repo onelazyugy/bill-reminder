@@ -1,44 +1,30 @@
-<mat-sidenav-container class="navcontainer">
-    <mat-sidenav #sidenav [mode]="mode.value" style="width:50%">
+<mat-sidenav-container>
+    <mat-sidenav #sidenav class="sideMenu">
         <div fxLayout="column" fxLayoutGap="5%">
             <div (click)="sidenav.toggle()" class="material-icons hamburgerMenu"><span class="pointer">menu</span></div>
-            <div fxLayout="row">
-                <div fxLayout="row" (click)="back()" class="pointer">
-                    <div class="material-icons">home</div>
-                    <div style="padding-top:5px;">HOME</div>
-                </div>                
-            </div>
-            <div fxLayout="row">
-                <div fxLayout="row" class="pointer">
-                    <div class="material-icons">account_circle</div>
-                    <div style="padding-top:5px;">PROFILE</div>
+            <div *ngFor="let component of components">
+                <div fxLayout="row">
+                    <div fxLayout="row" (click)="loadMenuItem(component.id)" class="pointer">
+                        <div class="material-icons">{{component.icon}}</div>
+                        <div style="padding-top:5px;">{{component.label}}</div>
+                    </div>
                 </div>
+                <mat-divider></mat-divider>
             </div>
-            <div fxLayout="row">
-                <div fxLayout="row" class="pointer">
-                    <div class="material-icons">credit_card</div>
-                    <div style="padding-top:5px;">BILLS</div>
-                </div>
-            </div>
-            <div fxLayout="row">
-                <div fxLayout="row" class="pointer">
-                    <div class="material-icons">shopping_basket</div>
-                    <div style="padding-top:5px;">CHORES</div>
-                </div>
-            </div>
-            <div fxLayout="row">
-                <div fxLayout="row" class="pointer">
-                    <div class="material-icons">today</div>
-                    <div style="padding-top:5px;">HUNI-TODO</div>
-                </div>
-            </div>
-        </div>         
+        </div>
     </mat-sidenav>
 
-    <mat-sidenav-content>
+    <mat-sidenav-content class="sideMenuContent">
         <div fxLayout="row" fxLayoutGap="30%">
             <div (click)="sidenav.toggle()" class="material-icons hamburgerMenu"><span class="pointer">menu</span></div>
-            <header-title [headerTitle]="'Settings'"></header-title>          
+            <header-title [headerTitle]="'Settings'"></header-title>
         </div> 
+        <div fxLayout="column">
+            <app-breadcrumb (click)="back()"></app-breadcrumb>
+        </div>
+        <div fxLayout="column">
+            <app-dynamic-menu-item [componentData]="componentData"></app-dynamic-menu-item>
+        </div>
     </mat-sidenav-content>
 </mat-sidenav-container>
+
